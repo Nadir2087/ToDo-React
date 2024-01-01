@@ -10,6 +10,14 @@ const StyleLi = styled.li({
   justifyContent: 'space-between',
   alignItems: 'center'
 });
+const StyleMain = styled.main({
+  maxWidth: '800px',
+  margin: '20px auto',
+  padding: '20px',
+  background: '#fff',
+  borderRadius: "5px",
+
+})
 
 function App() {
   const [Tap, setTap] = useState("");
@@ -36,7 +44,7 @@ function App() {
 
   return (
     <>
-      <main className="container">
+      <StyleMain className="z-depth-3">
         <section className="row ">
           <input
             onKeyDown={handleKeyEnter}
@@ -51,7 +59,7 @@ function App() {
             className="col s2 waves-effect waves-light btn"
             onClick={() => addElement(Tap)}
           >
-            Добавить
+            Create
           </button>
         </section>
         <section>
@@ -64,7 +72,7 @@ function App() {
             ))}
           </ul>
         </section>
-      </main>
+      </StyleMain>
     </>
   );
 }
