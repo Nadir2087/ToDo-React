@@ -8,18 +8,26 @@ function App() {
     setlist(newArray)
     setTap('')
   }
+  const handleOnChange = (event)=>{
+    setTap(event.target.value)
+  }
+
+  const handleKeyEnter = (event)=>{
+    if (event.key == 'Enter' && Tap !== ''){
+      addElement(Tap)
+      console.log(list);
+    }
+  }
   
-  // let list = ['Lorem ipsum dolor sit amet.', "Lorem ipsum dolor sit amet." ,"Lorem ipsum dolor sit amet." ,"Lorem ipsum dolor sit amet."]
   return (
     <>
       <main className="container">
         <section className="row ">
-          <input className="col s10" type="text" placeholder="Enter new Tap" onChange={(event)=>setTap(event.target.value)} value={Tap}/>
-          <button className="waves-effect waves-light btn" onClick={()=>addElement(Tap)}>Добавить</button>
+          <input onKeyDown={handleKeyEnter} className="col s10" type="text" placeholder="Enter new Tap" onChange={handleOnChange} value={Tap}/>
+          <button disabled={Tap === '' ? true : false} className="col s2 waves-effect waves-light btn" onClick={()=>addElement(Tap)}>Добавить</button>
         </section>
         <section>
           <ul>
-            {/* {list.map((lis, index)=> (<li key={index}>{lis}</li>))} */}
             {list.map((el, index) => <li key={index}>{el}</li>)}
           </ul>
         </section>
