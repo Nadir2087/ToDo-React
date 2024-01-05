@@ -1,3 +1,33 @@
 body{
   background: #c7c7c7;
 }
+
+button{
+  margin: 0;
+  padding: 0;
+}
+.arrow_down{
+  margin: 0 5px;
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  /* border-bottom: 20px solid #333;  */
+  border-top: 20px solid rgb(30, 146, 192); 
+}
+
+.arrow_up{
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 20px solid rgb(30, 146, 192); /* Цвет стрелки */
+}
+
+.disabled{
+  border-top: 20px solid #ccc; /* Цвет стрелки */
+}
+
+.disabledup{
+  border-bottom: 20px solid #ccc; /* Цвет стрелки */
+}
